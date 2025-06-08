@@ -1,0 +1,4 @@
+docker run -d
+--name f1_web_server
+-p 80
+nginx:latest
