@@ -1,0 +1,11 @@
+const express = require('express');
+const app = express();
+const port = 5000; // Pode escolher outra porta
+
+app.get('/', (req, res) => {
+  res.send('Bem-vindo ao servidor Web!');
+});
+
+app.listen(port, () => {
+  console.log(`Servidor a correr na porta ${port}`);
+});
