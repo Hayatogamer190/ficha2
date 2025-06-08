@@ -1,0 +1,15 @@
+# 2.4.1. Usar uma imagem que permita executar aplicações em 'nodejs'
+FROM node:16-alpine
+
+# 2.4.2. Copiar para o container o ficheiro 'package.json' e instalar as respetivas dependências
+COPY package*.json ./
+RUN npm install
+
+# 2.4.3. Copiar todos os ficheiros do projeto para o container
+COPY . .
+
+# 2.4.4. Iniciar a aplicação
+CMD ["npm", "start"]
+
+docker build -t ficha2
+docker run -p 5000:5000 ficha2
